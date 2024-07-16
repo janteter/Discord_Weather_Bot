@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "@discordjs/builders": "^1.8.2",
+    "axios": "^1.7.2",
     "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "weather-js": "^2.0.0"
   },
   "name": "discord_bot",
   "version": "1.0.0",

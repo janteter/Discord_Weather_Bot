@@ -3,7 +3,7 @@ console.log(process.env);
 
 const fs = require('node:fs');
 const path = require('node:path');
-const {Client, GatewayIntentBits, Collection, Events} = require('discord.js');
+const {Client, GatewayIntentBits, Collection, Events, EmbedBuilder} = require('discord.js');
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]});
 
 client.commands = new Collection();
@@ -19,7 +19,7 @@ for (const folder of commandFolders) { // sets commands into client.commands Col
         const command = require(filePath);
 
         if ('data' in command && 'execute' in command) {
-            client.command.set(command.data.name, command);
+            client.commands.set(command.data.name, command);
         }
         else {
             console.log(`[WARNING] the command at ${filePath} is missing a required "data" or "execute" property`);
